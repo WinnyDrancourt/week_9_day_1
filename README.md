@@ -34,3 +34,7 @@
 ## Functionnality 7 :
 
 - Boogie-Woogie, last-to-first on click grey button jumbo
+
+## Functionnality 8 :
+
+- Boogie-Woogie Invert

@@ -85,3 +85,19 @@ function clickLastToFirst() {
     .addEventListener("click", lastToFirst);
 }
 clickLastToFirst();
+
+// function 8 : boogie woogie inversé
+function clickFirstToLast() {
+  document.querySelector("a.btn-primary").href = "#";
+  let container = document.querySelector("div.album>div.container>div.row");
+
+  function firstToLast() {
+    let first = container.firstElementChild;
+    container.removeChild(first);
+    container.appendChild(first);
+  }
+  document
+    .querySelector("a.btn-primary")
+    .addEventListener("click", firstToLast);
+}
+clickFirstToLast();
