@@ -38,3 +38,11 @@
 ## Functionnality 8 :
 
 - Boogie-Woogie Invert
+
+## Functionnality 9 :
+
+- on logo Js & events select do :
+  ** "a" pressed => 4column left
+  ** "y" pressed => 4column middle
+  ** "p" pressed => 4column right
+  ** "b" pressed => default

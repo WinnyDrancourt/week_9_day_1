@@ -101,3 +101,74 @@ function clickFirstToLast() {
     .addEventListener("click", firstToLast);
 }
 clickFirstToLast();
+
+// function 9
+function editAwesome() {
+  let logoSelected = false;
+  const logoWrapper = document.querySelector(
+    "a.navbar-brand.d-flex.align-items-center",
+  );
+  const logoText = logoWrapper.querySelector("strong");
+  //function toggleLogoSelected()
+  logoWrapper.addEventListener("mousedown", () => {
+    logoSelected = !logoSelected;
+  });
+  document.addEventListener("mouseup", () => {
+    const selectText = window.getSelection().toString();
+    if (selectText.length == 11) {
+      console.log("Text selected :", selectText);
+      console.log("You can now try some shortkey a,y,p,b for fun.");
+      logoText.textContent = "JS & Events - Awesome mode";
+      logoSelected = true;
+      awesomeMode();
+    } else {
+      console.log("Disable awesome mode");
+      logoText.textContent = "JS & Events";
+      disabledAwesomeMode();
+    }
+  });
+
+  function awesomeMode() {
+    if (logoSelected) {
+      document.addEventListener("keydown", pickKey);
+    }
+  }
+
+  function pickKey(event) {
+    console.log("can run event key: ", logoSelected);
+    if (event.defaultPrevented) {
+      return;
+    }
+    if (!logoSelected) return;
+    const body = document.querySelector("body");
+
+    let key = event.key || String.fromCharCode(event.keyCode);
+
+    switch (key) {
+      case "a": //a: 4-md left of screen
+        body.className = "";
+        body.classList.add("col-md-4");
+        break;
+      case "b": //b: normal mode
+        body.className = "";
+        break;
+      case "p": //p: 4-md center of screen
+        body.className = "";
+        body.classList.add("col-md-4", "offset-md-4");
+        break;
+      case "y": //y: 4-md  right of screen
+        body.className = "";
+        body.classList.add("col-md-4", "offset-md-8");
+        break;
+      default:
+        break;
+    }
+  }
+  function disabledAwesomeMode() {
+    logoSelected = false;
+    document.removeEventListener("keydown", pickKey);
+    const body = document.querySelector("body");
+    body.className = "";
+  }
+}
+editAwesome();
