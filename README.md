@@ -26,3 +26,11 @@
 ## Functionnality 5 :
 
 - Remove link bootstrap when double click
+
+## Functionnality 6 :
+
+- Zoom and dezoom
+
+## Functionnality 7 :
+
+- Boogie-Woogie, last-to-first on click grey button jumbo

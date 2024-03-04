@@ -42,7 +42,46 @@ function clickToggleGreen() {
   }
   btn.addEventListener("click", editGreen);
 }
-console.log(document.querySelectorAll("div.btn-group>.btn:nth-child(2)")[1]);
 clickToggleGreen();
 
 // function 5 : Remove link Bootstrap
+function clickRemoveLink() {
+  function removeLink() {
+    let link = document.querySelector("head>link");
+    link.disabled = !link.disabled;
+  }
+  document.querySelector("div.navbar").addEventListener("dblclick", removeLink);
+}
+clickRemoveLink();
+
+// function 6 : Zoom and dezoom
+function hoverZoom() {
+  let viewButtons = document.getElementsByClassName("btn btn-sm btn-success");
+  for (let i = 0; i < viewButtons.length; i++) {
+    viewButtons[i].addEventListener("mouseover", function () {
+      document
+        .getElementsByClassName("card-text")
+        [i].classList.toggle("d-none");
+      document
+        .getElementsByClassName("card-img-top")
+        [i].classList.toggle("w-25");
+    });
+  }
+}
+hoverZoom();
+
+// function 7 : boogie woogie
+function clickLastToFirst() {
+  let container = document.querySelector("div.album>div.container");
+  let last = container.lastElementChild;
+  function lastToFirst() {
+    container.removeChild(last);
+    container.insertBefore(last, container.firstElementChild);
+  }
+  document
+    .querySelector(".navbar-toggler")
+    .addEventListener("click", lastToFirst);
+
+  console.log(document.querySelector("div.album>div.container"));
+}
+clickLastToFirst();
