@@ -56,32 +56,32 @@ clickRemoveLink();
 
 // function 6 : Zoom and dezoom
 function hoverZoom() {
-  let viewButtons = document.getElementsByClassName("btn btn-sm btn-success");
-  for (let i = 0; i < viewButtons.length; i++) {
-    viewButtons[i].addEventListener("mouseover", function () {
-      document
-        .getElementsByClassName("card-text")
-        [i].classList.toggle("d-none");
-      document
-        .getElementsByClassName("card-img-top")
-        [i].classList.toggle("w-25");
-    });
-  }
+  let cards = document.querySelectorAll(".col-md-4");
+  cards.forEach((cards) => {
+    let viewButtons = cards.querySelector(".btn-success");
+    let text = cards.querySelector(".card-text");
+
+    let img = cards.querySelector(".card-img-top");
+    function handleMouseover() {
+      text.classList.toggle("d-none");
+      img.classList.toggle("w-25");
+    }
+    viewButtons.addEventListener("mouseover", handleMouseover);
+  });
 }
 hoverZoom();
 
 // function 7 : boogie woogie
 function clickLastToFirst() {
-  let container = document.querySelector("div.album>div.container");
-  let last = container.lastElementChild;
+  let container = document.querySelector("div.album>div.container>div.row");
+
   function lastToFirst() {
+    let last = container.lastElementChild;
     container.removeChild(last);
     container.insertBefore(last, container.firstElementChild);
   }
   document
-    .querySelector(".navbar-toggler")
+    .querySelector("a.btn-secondary")
     .addEventListener("click", lastToFirst);
-
-  console.log(document.querySelector("div.album>div.container"));
 }
 clickLastToFirst();
