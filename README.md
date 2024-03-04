@@ -9,7 +9,7 @@
 
 ### Functionnality 1-bis :
 
-- Add a compter to this first funcntionnality
+- Add a compter to this first functionnality
 ---
 ## Functionnality 2 :
 
@@ -45,4 +45,4 @@
   ** "a" pressed => 4column left\
   ** "y" pressed => 4column middle\
   ** "p" pressed => 4column right\
-  ** "b" pressed => default\
+  ** "b" pressed => default
