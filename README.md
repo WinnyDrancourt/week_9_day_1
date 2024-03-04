@@ -3,14 +3,26 @@
 - Today we work around some JS discovery.
 - We try to make some funcntionnality to add fancy interact on Website
 
-# Funcntionnality 1:
+## Functionnality 1 :
 
 - Add "clique" on log when we click on footer part
 
-## Funcntionnality 1-bis:
+### Functionnality 1-bis :
 
 - Add a compter to this first funcntionnality
 
-# Funcntionnality 2:
+## Functionnality 2 :
 
 - NavBar collapse !
+
+## Functionnality 3 :
+
+- Edit btn card 1 on red.
+
+## Functionnality 4 :
+
+- Toggle style green or not
+
+## Functionnality 5 :
+
+- Remove link bootstrap when double click
