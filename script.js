@@ -105,24 +105,19 @@ clickFirstToLast();
 // function 9
 function editAwesome() {
   let logoSelected = false;
-  const logoWrapper = document.querySelector(
-    "a.navbar-brand.d-flex.align-items-center",
-  );
-  const logoText = logoWrapper.querySelector("strong");
+  let logo = document.querySelector("a.navbar-brand.d-flex.align-items-center");
+  let logoText = logo.querySelector("strong");
   //function toggleLogoSelected()
-  logoWrapper.addEventListener("mousedown", () => {
+  logo.addEventListener("mousedown", () => {
     logoSelected = !logoSelected;
   });
   document.addEventListener("mouseup", () => {
     const selectText = window.getSelection().toString();
     if (selectText.length == 11) {
-      console.log("Text selected :", selectText);
-      console.log("You can now try some shortkey a,y,p,b for fun.");
-      logoText.textContent = "JS & Events - Awesome mode";
+      logoText.textContent = "JS & Events - Awesome mode (Try : a, y, p, b)";
       logoSelected = true;
       awesomeMode();
     } else {
-      console.log("Disable awesome mode");
       logoText.textContent = "JS & Events";
       disabledAwesomeMode();
     }
@@ -135,7 +130,6 @@ function editAwesome() {
   }
 
   function pickKey(event) {
-    console.log("can run event key: ", logoSelected);
     if (event.defaultPrevented) {
       return;
     }
